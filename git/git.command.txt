@@ -1,0 +1,91 @@
+/* 
+ * C:/Users/이정섭/.gitconfig
+ * 3가지 상태 - Committed, Modified, Staged 
+ *  
+ * #기존 디렉토리를 Git 저장소로 만들기
+ *  $ git init
+ *  
+ * #기존 저장소를 Clone하기 (자동으로 가장 최신 버전을 Checkout해 놓는다)
+ *  $ git clone git://github.com/schacon/grit.git
+ *  
+ * #Git 지원 프로토콜
+ *   git://, http(s)://, ssh(user@server:/path.git)
+ *     
+ * #파일의 상태 확인하기
+ *  $ git status 
+ *    Changes not staged for commit  : 커밋 후 수정한 상태(Tracked +  unStaged)
+ *    Untracked files                : 커밋하지 않은 파일
+ *    Changes to be committed        : git add한 상태(Tracked +  Staged)
+ *    Changes to be committed:
+  *		(use "git reset HEAD <file>..." to unstage) : git add 후 다시 수정한 상태.
+  * #파일 무시하기
+  *   .gitignore 에 패턴 기록 
+  *   ex> .[oa] 확장자가 .o, .a무시
+  *   
+  * #Staged와 Unstaged 상태의 변경 내용을 보기
+  *  $ git diff
+  *  $ git diff --cached 
+  *  
+  * # 변경사항 커밋하기
+  *  $ git commit -m(v) "message"    
+  *  $ git commit -a -m "auto add"
+  *     
+  * #파일을 삭제하기
+  *  $ git rm a.txt
+  *  $ git rm --cached readme.txt    
+  * 
+  * #커밋 히스토리 조회하기
+  *  $ git log -p -2   : -p는 각 커밋의 diff 결과를 출력, -2최근 2개
+  *  $ git log -U1 --word-diff : 단어 단위로 보기
+  *  $ git log --pretty=oneline : log의 내용을 보여줄 때 기본 형식 이외에 여러 가지 중에 하나를 선택할 수 있다. 
+  *                               oneline 옵션은 각 커밋을 한 줄로 보여준다. {short, full, fuller}
+  *  $ git log --pretty=format:"%h - %an, %ar : %s" :  나만의 포맷으로 결과를 출력                 
+  *  $ git log --since=2.weeks : 기간조회 since, after, untill, before, author, committer            
+  *  $ git log --stat  : 히스토리통계 
+  *  
+  * #Modified 파일 되돌리기   
+  *  $ git commit -m 'initial commit'
+  *  $ git add forgotten_file
+  *  $ git commit --amend
+  *  
+  * #파일 상태를 Unstage로 변경하기    
+  *  $ git reset HEAD benchmarks.rb
+  *  
+  * #Modified 파일 되돌리기    
+  *  $ git checkout -- benchmarks.rb  
+  *    
+  * #리모트 저장소 확인하기   
+  *  $ git remote -v  
+  * #리모트 저장소 추가하기   
+  *  $ git remote add pb git://github.com/paulboone/ticgit.git  
+  *  
+  * #리모트 저장소에서 데이터를 가져오기 
+  *  $ git fetch [remote-name] : 리모트 저장소의 데이터를 모두 로컬로 가져오지만, 자동으로 머지하지 않는다
+  *  $ git pull [remote-name]  : 리모트 저장소 브랜치에서 데이터를 가져올 뿐만 아니라 자동으로 로컬 브랜치와 머지
+  *  
+  * #리모트 저장소에 Push하기
+  *  $ git push origin master : [리모트] [브랜치]
+  *                             Clone한 리모트 저장소에 쓰기 권한이 있고, Clone하고 난 이후 아무도 리모트 저장소에 Push하지 않았을 때만 사용할 수 있다. 
+  *                             다시 말해서 Clone한 사람이 여러 명 있을 때, 다른 사람이 Push한 후에 Push하려고 하면 Push할 수 없다. 
+  *                             먼저 다른 사람이 작업한 것을 가져와서 머지한 후에 Push할 수 있다
+  * 
+  * #브랜치 목록
+  *  $ git branch -v
+  *  $ git branch --merged
+  *  $ git branch --no-merged
+  * #브랜치 만들기 
+  *  $ git branch testing 
+  * #브랜치 이동하기
+  *  $ git checkout testing
+  * #브랜치 합치기
+  *  $ git checkout master  
+  *  $ git merge testing
+  *    //충돌시...
+  *    Auto-merging index.html
+  *    CONFLICT (content): Merge conflict in index.html  
+  *    Automatic merge failed; fix conflicts and then commit the result  
+  * #브랜치를 삭제
+  *  $ git branch -d testing
+  *  
+  *     
+ * */
