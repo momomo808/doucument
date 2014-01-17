@@ -8,4 +8,6 @@ Summary
 5. jcr/jackraabit
 6. mqtt/gcm/apns
 7. vaddin
-7. openlap/apacheDirectory/sso
+8. openlap/apacheDirectory/sso
+9. mustache
+10. lucene
