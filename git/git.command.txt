@@ -1,7 +1,4 @@
 /* 
- * C:/Users/이정섭/.gitconfig
- * 3가지 상태 - Committed, Modified, Staged 
- *  
  * #기존 디렉토리를 Git 저장소로 만들기
  *  $ git init
  *  
